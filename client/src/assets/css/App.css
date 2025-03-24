@@ -1,0 +1,208 @@
+#root {
+  max-width: 1280px;
+}
+
+#drop-area {
+  width: 30vw;
+  height: 30vh;
+  background: #fff;
+  padding: 1vh;
+  border-radius: 20px;
+  border-style: solid;
+  text-align: center;
+  border-color: #97C0ED;
+  display: block;
+}
+
+#img-view {
+  width: auto;
+  height: 30vh;
+  border-radius: 20px;
+  border: 2px dashed #97C0ED;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#img-view img {
+  padding-top: 1vh;
+  height: 25vh;
+  
+}
+
+.drag_drop {
+  margin: 0;
+  padding-top: 18vh;
+  width: 30vw;
+  text-align: center;
+  color: #00497A; 
+  font-weight: 500;
+}
+
+.page {
+  color: aliceblue;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.status {
+  background-color: #061A40;
+  width: 60vw;
+}
+
+.bottom_container {
+  display: flex;
+}
+
+.current_bot {
+  padding-left: 4vw;
+  height: fit-content;
+}
+
+.bot_name {
+  width: 60vw;
+  color: aliceblue;
+  font-weight: 100;
+  font-size: 5vh;
+  padding-top: 5vh;
+}
+
+.progress_bar {
+  display: flex;
+  height: 3vh;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #edcd18;
+  background-color: aliceblue;
+  color: #071F4B;
+}
+
+.progress {
+  height: 3vh;
+  width: 0.1vw;
+  background-color: #f2dd8d;
+}
+
+.bot_info_container {
+  width: fit-content;
+}
+
+.info_text {
+  padding-top: 2vh;
+  padding-left: 5vw;
+  color: aliceblue;
+  font-size: 2vh;
+  font-weight: 100;
+}
+
+.weld_info_container {
+  padding-top: 3vh;
+  width: fit-content
+}
+
+.weld_info_card {
+  padding: 1vh;
+  padding-left: 5vw;
+  display: flex;
+  align-content: center;
+}
+
+.weld_info_card_title {
+  font-size: 3vh;
+  font-weight: 100;
+  color: aliceblue;
+}
+
+.list {
+  background-color: #08265E;
+  width: 40vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.card {
+  display: flex;
+  height: 20vh; 
+  width: 30vw;
+  background-color: #00497A;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 5vw;
+  margin-top: 2.5vh;
+  margin-bottom: 5vh;
+  padding: 0;
+  box-shadow: 0px 0.4vh 0.1vw rgba(46, 40, 40, 0.4);
+  cursor: pointer;
+}
+
+.header {
+  color: aliceblue;
+  font-weight: 100;
+  height: auto;
+  width: 40vw;
+  margin-left: 5vw;
+}
+
+.maintext {
+  padding-top: 3vh;
+  font-size: 4vh;
+}
+
+.overall_status {
+  display: flex;
+  height: 3vh;
+  width: 30vw;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #CBE1F6;
+  background-color: #ed1818;
+}
+
+.working {
+  height: 3vh;
+  width: 22.5vw;
+  border-radius: 8px;
+  background-color: #edcd18;
+}
+
+.online {
+  height: 3vh;
+  width: 15vw;
+  border-radius: 8px;
+  background-color: #0d825f;
+}
+
+.image {
+  height: 20vh;
+  width: 10vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.textbox {
+  padding-top: 1.5vh;
+  width: 15vw;
+  height: auto;
+}
+
+.name {
+  font-size: 3vh;
+  color: #CBE1F6;
+}
+
+.text {
+  font-size: 2.5vh;
+  font-weight: 100;
+  color: #CBE1F6;
+}
+
+.status_bar {
+  position: relative;
+  margin-top: 2.5vh;
+  height: 15vh;
+  width: 3vw;
+}
+
