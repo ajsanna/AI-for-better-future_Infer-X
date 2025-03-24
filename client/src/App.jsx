@@ -49,9 +49,10 @@ function App() {
         <div className='status'>
           <div className='current_bot'>
             <div className='bot_name'>
+              <i class="arrow left"></i>
               WeldWise Robot 2
             </div>
-            <div className='progress_bar' style={{width: '50vw'}}>
+            <div className='progress_bar' style={{width: '59vw'}}>
               <div className='progress'></div>
               1%
             </div>
