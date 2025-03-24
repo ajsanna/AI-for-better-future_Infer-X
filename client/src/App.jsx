@@ -21,11 +21,26 @@ function App() {
   }, []);
 
   function uploadImage(event) {
-    const file = event.target.files[0]; 
-    if (file && imgViewRef.current) {
+    const file = event.target.files[0];
+    if (!file) return;
+  
+    if (imgViewRef.current) {
       const imgLink = URL.createObjectURL(file);
       imgViewRef.current.style.backgroundImage = `url(${imgLink})`;
     }
+  
+    const formData = new FormData();
+    formData.append("file", file); 
+  
+    console.log("Uploading file:", file.name);
+  
+    fetch("http://localhost:5000/upload", {
+      method: "POST",
+      body: formData, 
+    })
+      .then((response) => response.json())
+      .then((data) => console.log("Upload successful:", data))
+      .catch((error) => console.error("Error uploading file:", error));
   }
 
   return (
@@ -34,7 +49,7 @@ function App() {
         <div className='status'>
           <div className='current_bot'>
             <div className='bot_name'>
-              Autonomous Robot 2
+              WeldWise Robot 2
             </div>
             <div className='progress_bar' style={{width: '50vw'}}>
               <div className='progress'></div>
@@ -140,7 +155,7 @@ function App() {
 
             <div className='textbox'>
               <div className='name'> 
-                Autonomous Robot 1
+                WeldWise Robot 1
               </div>
               <div classname='text'>
                 Status: Available
@@ -159,7 +174,7 @@ function App() {
 
             <div className='textbox'>
               <div className='name'> 
-                Autonomous Robot 2
+                WeldWise Robot 2
               </div>
               <div classname='text'>
                 Status: Welding <br />
@@ -180,7 +195,7 @@ function App() {
 
             <div className='textbox'>
               <div className='name'> 
-                Autonomous Robot 3
+                WeldWise Robot 3
               </div>
               <div classname='text'>
                 Status: Available
@@ -199,7 +214,7 @@ function App() {
 
             <div className='textbox'>
               <div className='name'> 
-                Autonomous Robot 4
+                WeldWise Robot 4
               </div>
               <div classname='text'>
                 Status: Offline <br />
