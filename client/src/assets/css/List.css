@@ -1,0 +1,75 @@
+.list {
+    background-color: #2A3A50;
+    width: 29vw;
+    height: 100vh;
+    margin-left: 1vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0px 0.4vh 0.1vw rgba(46, 40, 40, 0.4);
+  }
+  
+  .card {
+    display: flex;
+    height: 10vh; 
+    width: 27.5vw;
+    background-color: #31445E;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0.75vw;
+    margin-top: 2.5vh;
+    margin-bottom: 5vh;
+    padding: 0;
+    box-shadow: 0px 0.4vh 0.1vw rgba(46, 40, 40, 0.4);
+    cursor: pointer;
+    color:white;
+  }
+
+  .textbox {
+    padding-left: 2vw;
+  }
+
+
+  .header {
+    color: aliceblue;
+    font-weight: 100;
+    height: auto;
+    width: 40vw;
+    margin-left: 1vw;
+  }
+  
+  .maintext {
+    padding-top: 3vh;
+    font-size: 4vh;
+  }
+  
+  .overall_status {
+    display: flex;
+    height: 3vh;
+    width: 27vw;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #CBE1F6;
+    background-color: #ed1818;
+  }
+  
+  .working {
+    height: 3vh;
+    width: 22.5vw;
+    border-radius: 8px;
+    background-color: #edcd18;
+  }
+  
+  .online {
+    height: 3vh;
+    width: 15vw;
+    border-radius: 8px;
+    background-color: #0d825f;
+  }
+  
+  .image {
+    height: 20vh;
+    width: 10vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./assets/css/App.css";
+import "./assets/css/List.css";
 import * as images from "./assets/data/images";
 
 function App() {
@@ -52,19 +53,23 @@ function App() {
               <i class="arrow left"></i>
               WeldWise Robot 2
             </div>
-            <div className='progress_bar' style={{width: '59vw'}}>
+            <div className='progress_bar'>
               <div className='progress'></div>
-              1%
-            </div>
+                1%
+              </div>
           </div>
 
           <div className='bottom_container'>
-            <div className='bot_info_container'>
+            <div className='info_container'>
+              <div className="info_title">
+                Device Information
+              </div>
               <div className='image' style={{
-                marginTop: '5vh', 
-                backgroundImage: `url(${images.robot_arm_1})`,
+                backgroundImage: `url(${images.robot_arm_3})`,
+                marginTop: '2vh', 
+                marginLeft: '1vw',
                 height: '50vh',
-                width: '20vw'
+                width: '15vw'
               }}></div>
               <div className='info_text'>
                 ID: ARoX002 <br />
@@ -77,49 +82,21 @@ function App() {
               </div>
             </div>
 
-            <div className='weld_info_container'>
-              <div className='weld_info_card'>
-                <div className='weld_info_card_title'>
-                  Material Thickness: 0.92mm
-                </div>
+            <div className='info_container'>
+              <div className='info_title'>
+                Weld Information 
               </div>
-
-              <div className='weld_info_card'>
-                <div className='weld_info_card_title'>
-                  Material Type: AISI 1010 carbon steel
-                </div>
+              <div className="info_text">
+                Material Thickness: 0.92mm <br />
+                Material Type: AISI 1010 carbon steel <br />
+                Material Resistance: 5346.4N <br />
+                Welding Time: 1500 ms <br />
+                Electrode Angle: 0 <br />
+                Welding Current: 1819.13A <br />
               </div>
+            </div>
 
-              <div className='weld_info_card'>
-                <div className='weld_info_card_title'>
-                  Material Resistance: 5346.4N
-                </div>
-              </div>
-
-              <div className='weld_info_card'>
-                <div className='weld_info_card_title'>
-                  Welding Time: 1500 ms
-                </div>
-              </div>
-
-              <div className='weld_info_card'>
-                <div className='weld_info_card_title'>
-                  Electrode Angle: 0 
-                </div>
-              </div>
-
-              <div className='weld_info_card'>
-                <div className='weld_info_card_title'>
-                  Welding Current: 1819.13A
-                </div>
-              </div>
-
-              <div className='weld_info_card'>
-                <div className='weld_info_card_title'>
-                  Current Weld Quality: Good
-                </div>
-              </div>
-
+            {/* <div className="live_view">
               <div className='weld_info_card' style={{paddingTop: '0'}}>
                 <label htmlFor="input-file" id="drop-area">
                   <input type="file" accept="image/*" id="input-file" hidden ref={inputFileRef} />
@@ -133,14 +110,14 @@ function App() {
                   </div>
                 </label>
               </div>
-            </div>
+            </div> */}
           </div>
           
         </div>
         <div className='list'>
           <div className='header'>
             <div className='maintext'>
-              STATUS
+              MANAGE DEVICES
             </div>
             <div className='overall_status'>
               <div className='working'>
@@ -155,7 +132,7 @@ function App() {
             }}> </div>
 
             <div className='textbox'>
-              <div className='name'> 
+              <div className='card_title'> 
                 WeldWise Robot 1
               </div>
               <div classname='text'>
