@@ -67,6 +67,38 @@
   display: flex;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.plot {
+  margin: 1vh;
+  border-left: 1px #637A92;
+  border-bottom: 1px #637A92;  
+  border-left-style: solid;
+  border-bottom-style: solid;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 16.1vh;
+  margin: 0.5vh;
+  text-align: right;
+  line-height: 10vh;
+  padding-right: 0.5vw;
+}
+
+.label_box {
+  display: flex;
+  justify-content: space-around;
+}
+
 .current_bot {
   padding-left: 1vw;
   background-color: #0E141B;

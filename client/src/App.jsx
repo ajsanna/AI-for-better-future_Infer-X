@@ -71,28 +71,92 @@ function App() {
                 height: '50vh',
                 width: '15vw'
               }}></div>
-              <div className='info_text'>
+              <div className='info_text' style={{paddingTop: '4vh'}}>
                 ID: ARoX002 <br />
                 Model Name: Arc Mate 50iD <br />
                 Status: Welding <br />
-                Mode: Autonomous <br />
                 Progress: 1% <br />
                 Time Remaining: 1 hour <br />
-                Weld Quality: Good
+                Mode: Autonomous <br />
               </div>
             </div>
 
-            <div className='info_container'>
-              <div className='info_title'>
-                Weld Information 
+            <div className="column">
+              <div className='info_container'>
+                <div className='info_title'>
+                  Metrics
+                </div>
+                <div className="info_text">
+                  <strong>Performance Efficiency Since Last Maintainance</strong>
+                  <div className="plot" style={{width: '30vw', height: '20vh'}}>
+                    <div className="bar" style={{height: '19.5vh', marginLeft: '1vh', backgroundColor: '#0d825f'}}></div>
+                    <div className="bar" style={{height: '19.25vh', backgroundColor: '#0d825f'}}></div>
+                    <div className="bar" style={{height: '19vh', backgroundColor: '#0d825f'}}></div>
+                    <div className="bar" style={{height: '18.75vh', backgroundColor: '#0d825f'}}></div>
+                  </div>
+                  <div className="label_box">
+                    <div className="label_text">Dec</div>
+                    <div className="label_text">Jan</div>
+                    <div className="label_text">Feb</div>
+                    <div className="label_text">Mar</div>
+                  </div>
+                </div>
+
+                <div className="info_text">
+                  <strong>Time Profile (Past 24 Hours)</strong>
+                  <div className="row">
+                    <div className="plot" style={{width: '20vw', height: '10vh'}}>
+                      <div className="bar" style={{height: '9.5vh', width: '6vw', marginLeft: '1vh', marginRight: '0', backgroundColor: '#edcd18'}}>
+                        5.3
+                      </div>
+                      <div className="bar" style={{height: '9.5vh', width: '20vw', marginLeft: '0', backgroundColor: '#0d825f'}}>
+                        18.7
+                      </div>
+                    </div>
+                    <div className="column" style={{marginTop: '0.5vh'}}>
+                      <div className="row">
+                        <div className="bar" style={{width: '1vh', height: '1vw',  backgroundColor: '#0d825f'}}></div>
+                        Running Time
+                      </div>
+                      <div className="row">
+                        <div className="bar" style={{width: '1vh', height: '1vw',  backgroundColor: '#edcd18'}}></div>
+                        Idle Time
+                      </div>
+                      <div className="row">
+                        <div className="bar" style={{width: '1vh', height: '1vw',  backgroundColor: '#ed1818'}}></div>
+                        Offline Time
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="info_text">
-                Material Thickness: 0.92mm <br />
-                Material Type: AISI 1010 carbon steel <br />
-                Material Resistance: 5346.4N <br />
-                Welding Time: 1500 ms <br />
-                Electrode Angle: 0 <br />
-                Welding Current: 1819.13A <br />
+            </div>
+
+            <div className="column">
+              <div className='info_container'>
+                <div className='info_title'>
+                  Weld Information 
+                </div>
+                <div className="info_text">
+                  Material Thickness: 0.92mm <br />
+                  Material Type: AISI 1010 carbon steel <br />
+                  Material Resistance: 5346.4N <br />
+                  Welding Time: 1500 ms <br />
+                  Electrode Angle: 0 <br />
+                  Welding Current: 1819.13A <br />
+                </div>
+              </div>
+
+              <div className='info_container'>
+                <div className='info_title'>
+                  Device Health
+                </div>
+                <div className="info_text">
+                  Performance Efficiency: 80% <br />
+                  Required Maintainance: None <br />
+                  Last Maintainance: 12/19/2024 <br />
+                  Firmware Version: 1.0.3 (Latest) <br />
+                </div>
               </div>
             </div>
 
