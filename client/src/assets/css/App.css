@@ -17,8 +17,9 @@
 }
 
 #drop-area {
-  width: 30vw;
-  height: 30vh;
+  width: 34.1vw;
+  height: 44vh;
+  margin-bottom: 0.5vh;
   background: #384D6B;
   padding: 1vh;
   border-radius: 20px;
@@ -29,7 +30,7 @@
 
 #img-view {
   width: auto;
-  height: 30vh;
+  height: 43vh;
   border-radius: 20px;
   border: 2px dashed aliceblue;
   background-repeat: no-repeat;
@@ -59,7 +60,7 @@
 }
 
 .status {
-  width: 70vw;
+  width: 73.6vw;
   padding-bottom: 3vh;
 }
 
@@ -195,10 +196,4 @@
   color: #CBE1F6;
 }
 
-.status_bar {
-  position: relative;
-  margin-left: 5vw;
-  height: 10vh;
-  width: 0.5vw;
-}
 
