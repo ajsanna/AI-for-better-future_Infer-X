@@ -1,79 +1,84 @@
 .list {
-    background-color: #2A3A50;
-    width: 25.4vw;
-    height: 100vh;
-    margin-left: 1vw;
-    overflow-y: auto;
-    box-shadow: 0px 0.4vh 0.1vw rgba(46, 40, 40, 0.4);
-  }
-  
-  .card {
-    display: flex;
-    height: 10vh; 
-    background-color: #31445E;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 0.75vw;
-    margin-top: 2.5vh;
-    margin-bottom: 5vh;
-    padding: 0;
-    box-shadow: 0px 0.4vh 0.1vw rgba(46, 40, 40, 0.4);
-    cursor: pointer;
-    color:white;
-  }
-  
-  .status_bar {
-    position: relative;
-    margin-left: 1vw;
-    height: 10vh;
-    width: 0.5vw;
-  }
+  background-color: #2A3A50;
+  width: 25.4vw;
+  height: 100vh;
+  margin-left: 1vw;
+  overflow-y: auto;
+  box-shadow: 0px 0.4vh 0.1vw rgba(46, 40, 40, 0.4);
+}
 
-  .textbox {
-    padding-left: 2vw;
-  }
+.card {
+  display: flex;
+  height: 10vh; 
+  background-color: #31445E;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.75vw;
+  margin-top: 2.5vh;
+  margin-bottom: 2vh;
+  padding: 0;
+  box-shadow: 0px 0.4vh 0.1vw rgba(46, 40, 40, 0.4);
+  cursor: pointer;
+  color:white;
+}
+
+.card_title {
+  font-size: large;
+  font-weight: bold;
+}
+
+.status_bar {
+  position: relative;
+  margin-left: 1vw;
+  height: 10vh;
+  width: 0.5vw;
+}
+
+.textbox {
+  padding-left: 2vw;
+}
 
 
-  .header {
-    color: aliceblue;
-    font-weight: 100;
-    height: auto;
-    margin-left: 1vw;
-    margin-right: 1vw;
-  }
-  
-  .maintext {
-    padding-top: 3vh;
-    font-size: 4vh;
-  }
-  
-  .overall_status {
-    display: flex;
-    height: 3vh;
-    border-radius: 8px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #CBE1F6;
-    background-color: #ed1818;
-  }
-  
-  .working {
-    height: 3vh;
-    width: 16.875vw;
-    border-radius: 8px;
-    background-color: #edcd18;
-  }
-  
-  .online {
-    height: 3vh;
-    width: 11.25vw;
-    border-radius: 8px;
-    background-color: #0d825f;
-  }
-  
-  .image {
-    height: 20vh;
-    width: 10vw;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+.header {
+  color: aliceblue;
+  font-weight: 100;
+  height: auto;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.maintext {
+  padding-top: 3vh;
+  font-size: 4vh;
+}
+
+.overall_status {
+  display: flex;
+  height: 3vh;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #CBE1F6;
+  background-color: #ed1818;
+}
+
+.working {
+  height: 3vh;
+  width: 16.875vw;
+  border-radius: 8px;
+  background-color: #edcd18;
+}
+
+.online {
+  height: 3vh;
+  width: 11.25vw;
+  border-radius: 8px;
+  background-color: #0d825f;
+}
+
+.image {
+  height: 20vh;
+  width: 10vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

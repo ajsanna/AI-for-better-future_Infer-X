@@ -67,7 +67,8 @@ function App() {
               <div className='image' style={{
                 backgroundImage: `url(${images.robot_arm_3})`,
                 marginTop: '2vh', 
-                marginLeft: '1vw',
+                marginLeft: '0.5vw',
+                marginRight: '0.5vw',
                 height: '50vh',
                 width: '15vw'
               }}></div>
@@ -107,9 +108,11 @@ function App() {
                     </div>
                     <div className="info_text">
                       Performance Efficiency: 80% <br />
-                      Required Maintainance: None <br />
                       Last Maintainance: 12/19/2024 <br />
                       Firmware Version: 1.0.3 (Latest) <br />
+                      Required Maintainance: None <br />
+                      <br />
+                      <br />
                     </div>
                   </div>
                 </div>
@@ -251,13 +254,11 @@ function App() {
             }}> </div>
 
             <div className='textbox'>
-              <div className='name'> 
+              <div className='card_title'> 
                 WeldWise Robot 2
               </div>
               <div classname='text'>
                 Status: Welding <br />
-                Progress: 1% <br />
-                Time Remaining: 1 hour
               </div>
             </div>
 
@@ -272,7 +273,7 @@ function App() {
             }}> </div>
 
             <div className='textbox'>
-              <div className='name'> 
+              <div className='card_title'> 
                 WeldWise Robot 3
               </div>
               <div classname='text'>
@@ -291,7 +292,7 @@ function App() {
             }}> </div> 
 
             <div className='textbox'>
-              <div className='name'> 
+              <div className='card_title'> 
                 WeldWise Robot 4
               </div>
               <div classname='text'>
