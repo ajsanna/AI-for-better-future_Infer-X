@@ -15,5 +15,4 @@ export const listitem = [
         name: "Weldwise Robot 4",
         status: "Status: Offline"
     }
-   
 ]

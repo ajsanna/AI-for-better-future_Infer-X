@@ -1,21 +1,79 @@
 export const information = [
     {
-        name: "Weldwise Robot 2",
-        progress: "1%",
+        name: "Weldwise Robot 1",
+        progress: "1%", 
         botinfo: [
-            "ID: ARoX002\n", "Model Name: Arc Mate 50iD\n", 
-            "Status: Welding\n", "Progress: 1%\n", 
-            "Time Remaining: 1 hour\n", "Mode: Autonomous\n"
+            "ID: ARoX002", "Model Name: Arc Mate 50iD", 
+            "Status: Welding", "Progress: 1%", 
+            "Time Remaining: 1 hour", "Mode: Autonomous"
         ],
         weldinfo: [
-            "Material Thickness: 0.92mm\n", "Material Type: AISI 1010 carbon steel\n",
-            "Material Resistance: 5346.4N\n", "Welding Time: 1500 ms\n",
-            "Electrode Angle: 0 \n", "Welding Current: 1819.13A\n", "Nugget Diameter: 2.63\n"
+            "Material Thickness: 0.92mm", "Material Type: AISI 1010 carbon steel",
+            "Material Resistance: 5346.4N", "Welding Time: 1500 ms",
+            "Electrode Angle: 0 ", "Welding Current: 1819.13A", "Nugget Diameter: 2.63"
         ],
         devicehealth: [
-            "Performance Efficiency: 80%\n", "Last Maintainance: 12/19/2024\n",
-            "Firmware Version: 1.0.3 (Latest)\n", "Required Maintainance: None\n"
+            "Performance Efficiency: 80%", "Last Maintainance: 12/19/2024",
+            "Firmware Version: 1.0.3 (Latest)", "Required Maintainance: None"
+        ]
+    },
+
+    {
+        name: "Weldwise Robot 2",
+        progress: "1%", 
+        botinfo: [
+            "ID: ARoX002", "Model Name: Arc Mate 50iD", 
+            "Status: Welding", "Progress: 1%", 
+            "Time Remaining: 1 hour", "Mode: Autonomous"
+        ],
+        weldinfo: [
+            "Material Thickness: 0.92mm", "Material Type: AISI 1010 carbon steel",
+            "Material Resistance: 5346.4N", "Welding Time: 1500 ms",
+            "Electrode Angle: 0 ", "Welding Current: 1819.13A", "Nugget Diameter: 2.63"
+        ],
+        devicehealth: [
+            "Performance Efficiency: 80%", "Last Maintainance: 12/19/2024",
+            "Firmware Version: 1.0.3 (Latest)", "Required Maintainance: None"
+        ]
+    },
+
+    {
+        name: "Weldwise Robot 3",
+        progress: "1%", 
+        botinfo: [
+            "ID: ARoX002", "Model Name: Arc Mate 50iD", 
+            "Status: Welding", "Progress: 1%", 
+            "Time Remaining: 1 hour", "Mode: Autonomous"
+        ],
+        weldinfo: [
+            "Material Thickness: 0.92mm", "Material Type: AISI 1010 carbon steel",
+            "Material Resistance: 5346.4N", "Welding Time: 1500 ms",
+            "Electrode Angle: 0 ", "Welding Current: 1819.13A", "Nugget Diameter: 2.63"
+        ],
+        devicehealth: [
+            "Performance Efficiency: 80%", "Last Maintainance: 12/19/2024",
+            "Firmware Version: 1.0.3 (Latest)", "Required Maintainance: None"
+        ]
+    },
+
+    {
+        name: "Weldwise Robot 4",
+        progress: "1%", 
+        botinfo: [
+            "ID: ARoX002", "Model Name: Arc Mate 50iD", 
+            "Status: Welding", "Progress: 1%", 
+            "Time Remaining: 1 hour", "Mode: Autonomous"
+        ],
+        weldinfo: [
+            "Material Thickness: 0.92mm", "Material Type: AISI 1010 carbon steel",
+            "Material Resistance: 5346.4N", "Welding Time: 1500 ms",
+            "Electrode Angle: 0 ", "Welding Current: 1819.13A", "Nugget Diameter: 2.63"
+        ],
+        devicehealth: [
+            "Performance Efficiency: 80%", "Last Maintainance: 12/19/2024",
+            "Firmware Version: 1.0.3 (Latest)", "Required Maintainance: None"
         ]
     }
-   
 ]
+
+export default information

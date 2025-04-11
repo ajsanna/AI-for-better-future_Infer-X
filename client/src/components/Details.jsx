@@ -1,59 +1,25 @@
-import { useEffect, useRef } from "react";
 import "../assets/css/Details.css";
 import * as images from "../assets/data/images";
+import LiveView from "../components/LiveView.jsx";
 
-export default function Details() {
-  const inputFileRef = useRef(null);
-  const imgViewRef = useRef(null);
-
-  useEffect(() => {
-    const fileInput = inputFileRef.current;
-    
-    if (fileInput) {
-      fileInput.addEventListener("change", uploadImage);
-    }
-
-    return () => {
-      if (fileInput) {
-        fileInput.removeEventListener("change", uploadImage);
-      }
-    };
-  }, []);
-
-  function uploadImage(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-  
-    if (imgViewRef.current) {
-      const imgLink = URL.createObjectURL(file);
-      imgViewRef.current.style.backgroundImage = `url(${imgLink})`;
-    }
-  
-    const formData = new FormData();
-    formData.append("file", file); 
-  
-    console.log("Uploading file:", file.name);
-  
-    fetch("http://localhost:5000/upload", {
-      method: "POST",
-      body: formData, 
-    })
-      .then((response) => response.json())
-      .then((data) => console.log("Upload successful:", data))
-      .catch((error) => console.error("Error uploading file:", error));
-  }
+export default function Details( {information, setName} ) { 
+  const handleClick = () => {
+    setName(null);
+  };
 
   return (
     <>
       <div className='status'>
         <div className='current_bot'>
           <div className='bot_name'>
-            <i class="arrow left"></i>
-            WeldWise Robot 2
+            <button className="button" onClick = {() => handleClick()}>
+              <i class="arrow left"></i>
+            </button>
+            { information.name }
           </div>
           <div className='progress_bar'>
             <div className='progress'></div>
-              1%
+              { information.progress }
             </div>
         </div>
 
@@ -63,7 +29,7 @@ export default function Details() {
               Device Information
             </div>
             <div className='image' style={{
-              backgroundImage: `url(${images.robot_arm_3})`,
+              backgroundImage: `url(${images.robot_arm_2})`,
               marginTop: '2vh', 
               marginLeft: '0.5vw',
               marginRight: '0.5vw',
@@ -71,12 +37,9 @@ export default function Details() {
               width: '15vw'
             }}></div>
             <div className='info_text' style={{paddingTop: '4vh'}}>
-              ID: ARoX002 <br />
-              Model Name: Arc Mate 50iD <br />
-              Status: Welding <br />
-              Progress: 1% <br />
-              Time Remaining: 1 hour <br />
-              Mode: Autonomous <br />
+              { information.botinfo.map((line) => (
+                <div>{ line }</div>
+              ))}
             </div>
           </div>
           
@@ -88,13 +51,9 @@ export default function Details() {
                     Weld Information 
                   </div>
                   <div className="info_text">
-                    Material Thickness: 0.92mm <br />
-                    Material Type: AISI 1010 carbon steel <br />
-                    Material Resistance: 5346.4N <br />
-                    Welding Time: 1500 ms <br />
-                    Electrode Angle: 0 <br />
-                    Welding Current: 1819.13A <br />
-                    Nugget Diameter: 2.63 <br />
+                    { information.weldinfo.map((line) => (
+                      <div>{ line }</div>
+                    ))}
                   </div>
                 </div>
 
@@ -105,12 +64,9 @@ export default function Details() {
                     Device Health
                   </div>
                   <div className="info_text">
-                    Performance Efficiency: 80% <br />
-                    Last Maintainance: 12/19/2024 <br />
-                    Firmware Version: 1.0.3 (Latest) <br />
-                    Required Maintainance: None <br />
-                    <br />
-                    <br />
+                    { information.devicehealth.map((line) => (
+                      <div>{ line }</div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -120,21 +76,7 @@ export default function Details() {
                   Live View 
                 </div>
                 <div className="info_text">
-                  <div className="live_view">
-                    <div className='weld_info_card' style={{paddingTop: '0'}}>
-                      <label htmlFor="input-file" id="drop-area">
-                        <input type="file" accept="image/*" id="input-file" hidden ref={inputFileRef} />
-                        <div
-                          id="img-view"
-                          ref={imgViewRef}
-                          style={{
-                            backgroundImage: `url(${images.steel_welding})`,
-                          }}>
-                          <p className="drag_drop">Drag and drop or click here to upload image</p>
-                        </div>
-                      </label>
-                    </div>
-                  </div>
+                  <LiveView/>
                 </div>
               </div>
             </div>

@@ -1,10 +1,12 @@
 .card {
   display: flex;
-  height: 10vh; 
-  background-color: #31445E;
+  height: 7vh; 
+  width: 23.9vw;
+  background-color: #313949;
   border-radius: 4px;
   overflow: hidden;
   margin: 0.75vw;
+  margin-right: 0vw;
   margin-top: 2.5vh;
   margin-bottom: 2vh;
   padding: 0;

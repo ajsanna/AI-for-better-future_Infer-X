@@ -1,13 +1,22 @@
 import React from "react"
 import * as images from "../assets/data/images";
 import "../assets/css/listitem.css"
+ 
+export default function ListItem( {name, setName, status} ) {
+  const handleClick = (name) => {
+    setName(name);
+    console.log(name);
+  };
 
-export default function ListItem( {name, status} ) {
   return (
     <>
-      <div className="card">
+      <button className="card" onClick={() => handleClick(name)}>
         <div className='image' style={{
-          backgroundImage: `url(${images.robot_arm_1})`
+          backgroundImage: `url(${images.robot_arm_1})`,
+          marginTop: '1vh',
+          marginLeft: '1vw',
+          width: '5vw',
+          height: '10vh'
         }}> </div>
         <div className="textbox">
           <div className='card_title'> 
@@ -28,7 +37,7 @@ export default function ListItem( {name, status} ) {
             ? "#ed1818"
             : "#888",
         }}></div>
-      </div>
+      </button>
     </>
   );
 }
