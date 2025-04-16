@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import os
 import shutil
@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Initialize and load the model
-model = YOLO('yolov8m.pt') 
+model = YOLO('best.pt') 
 
 print("Model Task Type:", model.model.task)
 
@@ -24,6 +24,20 @@ DONE_DIR = os.path.join(BASE_DIR, 'done')
 for folder in [PROCESS_DIR, PROCESSING_DIR, DONE_DIR]:
     os.makedirs(folder, exist_ok=True)
 
+@app.route("/api/upload_image", methods=["POST"])
+def upload_image():
+    if 'file' not in request.files:
+        return jsonify({"status": "error", "message": "No file part"}), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"status": "error", "message": "No selected file"}), 400
+
+    filename = file.filename
+    save_path = os.path.join(PROCESS_DIR, filename)
+    file.save(save_path)
+
+    return jsonify({"status": "success", "message": f"File {filename} uploaded"}), 200
 
 @app.route("/api/get_result", methods=['POST'])
 def get_result():
@@ -41,7 +55,7 @@ def get_result():
     shutil.move(src_path, processing_path)
 
     try:
-        # Run inference
+        # Run inference on the image
         results = model(processing_path, conf=0.05)[0]
         print("Raw Boxes:", results.boxes)
 
@@ -58,23 +72,27 @@ def get_result():
                         "class_name": results.names[int(class_id)]
                     })
 
-        # Save the result JSON
-        done_image_path = os.path.join(DONE_DIR, image_file)
-        result_json_path = os.path.splitext(done_image_path)[0] + '.json'
+        # Save the annotated result image
+        result_image_path = os.path.join(DONE_DIR, f"annotated_{image_file}")
+        results.save(result_image_path)  # Save the result image with annotations
 
-        shutil.move(processing_path, done_image_path)
+        # Save the result JSON
+        result_json_path = os.path.splitext(result_image_path)[0] + '.json'
         with open(result_json_path, 'w') as json_file:
             json.dump({"detections": detections}, json_file, indent=4)
 
         return jsonify({
             'status': 'success',
-            'image': image_file,
+            'image': f"annotated_{image_file}",  # Return the annotated image filename
             'detections': detections
         })
 
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
+@app.route('/done/<filename>')
+def serve_image(filename):
+    return send_from_directory(DONE_DIR, filename)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -33,14 +33,33 @@ export default function LiveView() {
       formData.append("file", file); 
     
       console.log("Uploading file:", file.name);
-    
-      fetch("http://localhost:5000/upload", {
+
+      fetch("http://localhost:5000/api/upload_image", {
         method: "POST",
         body: formData, 
       })
-        .then((response) => response.json())
-        .then((data) => console.log("Upload successful:", data))
-        .catch((error) => console.error("Error uploading file:", error));
+      .then((res) => res.json())
+      .then((uploadData) => {
+        console.log("Upload complete", uploadData);
+    
+        return fetch("http://localhost:5000/api/get_result", {
+          method: "POST"
+        });
+      })
+      .then((res) => res.json())
+      .then((resultData) => {
+        console.log("Detection result:", resultData);
+        const imageFileName = resultData.image;
+        console.log(imageFileName)
+        const imageURL = `http://localhost:5000/done/${imageFileName}`;
+
+        if (imgViewRef.current) {
+          imgViewRef.current.style.backgroundImage = `url(${imageURL})`;
+        }
+      })
+      .catch((err) => {
+        console.error("Error during upload or detection:", err);
+      });
     }
 
   return (
@@ -55,7 +74,6 @@ export default function LiveView() {
               style={{
                 backgroundImage: `url(${images.steel_welding})`,
               }}>
-              <p className="drag_drop">Drag and drop or click here to upload image</p>
             </div>
           </label>
         </div>

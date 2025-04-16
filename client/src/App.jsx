@@ -12,7 +12,6 @@ function App() {
   useEffect(() => {
     if (name !== prevName) {
       setPrevName(name);
-      console.log(name);
     }
   }, [name])
 

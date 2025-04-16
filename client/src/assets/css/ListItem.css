@@ -21,6 +21,8 @@
 }
 
 .textbox {
-  padding-left: 2vw;
+  text-align: left;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
   

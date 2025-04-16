@@ -1,8 +1,26 @@
 import "../assets/css/Details.css";
 import * as images from "../assets/data/images";
+import plotdata from "../assets/data/plotdata";
 import LiveView from "../components/LiveView.jsx";
+import Plots from "../components/Plots.jsx";
+import { useRef, useEffect, useState } from "react";
 
 export default function Details( {information, setName} ) { 
+  let baseRef = useRef(null);
+  let [baseLen, setBaseLen] = useState(0);
+  let [progressLen, setProgressLen] = useState(0);
+
+  useEffect(() => {
+    if (baseRef.current && information.progress.includes('%')) {
+      setBaseLen((baseRef.current.offsetWidth / window.innerWidth) * 100)
+      
+      const progressValue = parseFloat(information.progress.replace(/%$/, ''));
+      const progressWidth = (baseLen * progressValue) / 100;
+
+      setProgressLen(progressWidth)
+    }
+  })
+
   const handleClick = () => {
     setName(null);
   };
@@ -17,11 +35,29 @@ export default function Details( {information, setName} ) {
             </button>
             { information.name }
           </div>
-          <div className='progress_bar'>
-            <div className='progress'></div>
-              { information.progress }
+          <div className='progress_bar'  ref={baseRef} style={{
+              borderColor: 
+                information.progress === "available"
+                ? "#0d825f"
+                : information.progress === "offline"
+                ? "#ed1818"
+                : "#edcd18",
+            }}>
+            <div className='progress' style={{ 
+                width: 
+                information.progress === "available"
+                ? "0vw"
+                : information.progress === "offline"
+                ? "0vw"
+                :`${progressLen}vw`
+              }}></div>
+              { 
+                information.progress !== "available" && 
+                information.progress !== "offline" && 
+                information.progress 
+              }
             </div>
-        </div>
+          </div>
 
         <div className='bottom_container'>
           <div className='info_container'>
@@ -90,7 +126,7 @@ export default function Details( {information, setName} ) {
                   paddingTop:'1.5vh',
                   paddingBottom: '1.5vh'
                 }}>
-                  <strong>Performance Efficiency Since Last Maintainance</strong>
+                  {/* <strong>Performance Efficiency in the Last 4 Months</strong>
                   <div className="plot" style={{width: '22.5vw', height: '10vh'}}>
                     <div className="bar" style={{height: '9.5vh', marginLeft: '1vh', backgroundColor: '#0d825f'}}></div>
                     <div className="bar" style={{height: '9.25vh', backgroundColor: '#0d825f'}}></div>
@@ -102,7 +138,10 @@ export default function Details( {information, setName} ) {
                     <div className="label_text">Jan</div>
                     <div className="label_text">Feb</div>
                     <div className="label_text">Mar</div>
-                  </div>
+                  </div> */}
+                  <Plots 
+                    plotdata = {plotdata.find(item => item.name == information.name)}
+                  />
                 </div>
 
                 <div className="info_text" style={{

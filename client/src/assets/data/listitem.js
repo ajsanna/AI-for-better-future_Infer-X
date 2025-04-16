@@ -1,7 +1,7 @@
 export const listitem = [
     {
         name: "Weldwise Robot 1",
-        status: "Status: Available"
+        status: "Status: Welding"
     },
     {
         name: "Weldwise Robot 2",
