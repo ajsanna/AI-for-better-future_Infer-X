@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  font-size: 1.7vh;
   height: 7vh; 
   width: 23.9vw;
   background-color: #313949;
@@ -16,7 +17,7 @@
 }
 
 .card_title {
-  font-size: large;
+  font-size: 2vh;
   font-weight: bold;
 }
 

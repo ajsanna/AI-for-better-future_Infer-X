@@ -60,7 +60,7 @@ export const information = [
         name: "Weldwise Robot 4",
         progress: "offline", 
         botinfo: [
-            "ID: ARoX002", "Model Name: Arc Mate 50iD", 
+            "ID: ARoX004", "Model Name: Arc Mate 50iD", 
             "Status: Offline", "Progress: -", 
             "Time Remaining: -", "Mode: -"
         ],
